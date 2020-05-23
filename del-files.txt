@@ -1,0 +1,9 @@
+  [rosbuild] Couldn't find source file src/model/itomp_planning_group.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later
+  [rosbuild] Couldn't find source file src/model/treefksolverjointposaxis.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later
+  [rosbuild] Couldn't find source file src/model/treefksolverjointposaxis_partial.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later
+  [rosbuild] Couldn't find source file src/trajectory/itomp_cio_trajectory.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later
+  [rosbuild] Couldn't find source file src/cost/smoothness_cost.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later
+  [rosbuild] Couldn't find source file src/cost/trajectory_cost_accumulator.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later
+  [rosbuild] Couldn't find source file src/contact/contact_force_solver.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later
+  [rosbuild] Couldn't find source file src/visualization/visualization_manager.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later
+  [rosbuild] Couldn't find source file src/optimization/evaluation_manager.cpp; assuming that it is in /home/ros/catkin_ws/itomp/itomp_cio_planner and will be generated later

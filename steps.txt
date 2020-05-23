@@ -1,0 +1,41 @@
+steps to take
+1. docker build . -t hydro
+2. xhost +local:root
+3. docker run -it --net host -e DISPLAY=:0 -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix hydro bash
+4. in move_itomp use rosmake
+
+5. cd ~/hydro_workspace/itomp
+	cd external_libs
+	tar xzvf clapack.tgz
+	tar xzvf levmar-2.6.tgz
+6. in itomp-cio-planner create folder called lib
+7. cd CLAPACK-3.2.1
+		mv make.inc.example make.inc
+		(open make.inc using a text editor and add '-fPIC' to CFLAGS, LOADOPTS, and NOOPTS)
+		make f2clib
+		make blaslib
+		make
+		cp F2CLIBS/libf2c.a ~/hydro_workspace/itomp/itomp_cio_planner/lib/libf2c.a
+		cp blas_LINUX.a ~/hydro_workspace/itomp/itomp_cio_planner/lib/libblas.a
+		cp lapack_LINUX.a ~/hydro_workspace/itomp/itomp_cio_planner/lib/liblapack.a
+		cp ~/hydro_workspace/itomp/itomp_cio_planner/CMakeLists_use_ext_lib.txt ~/hydro_workspace/itomp/itomp_cio_planner/CMakeLists.txt
+
+8. in external-library/levmar-2.6 and external-library/rbdl folder.
+	mkdir build
+	cd build
+	cmake ..
+	make
+	cp liblevmar.a ~/hydro_workspace/itomp/itomp_cio_planner/lib/liblevmar.a
+	cp librbdl.a ~/hydro_workspace/itomp/itomp_cio_planner/lib/librbdl.a
+
+9. CMakelists.txt in itomp-cio-planner should contain the rows shown in CMakelists-in-docker.txt
+10. in new-eval-manager.cpp rows 775 and 776, replace -> with .   (to the dot only to me specific) 
+11. roslaunch ./launch/move_itomp.launch
+
+12. Create launch files by using moveit assistant 
+
+optional 
+rosmake move-kuka
+
+
+
