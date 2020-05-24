@@ -1,0 +1,58 @@
+num_trials: 1
+planning_time_limit: 120.0
+max_iterations: 10
+max_iterations_after_collision_free: 0
+num_trajectories: 1
+
+smoothness_cost_weight: 0.0001
+obstacle_cost_weight: 20.0
+torque_cost_weight: 0.0
+state_validity_cost_weight: 0.0
+endeffector_velocity_cost_weight: 0.0
+contact_invariant_cost_weight: 1.0
+physics_violation_cost_weight: 1.0
+goal_pose_cost_weight: 0.0
+CoM_cost_weight: 0.0
+FTR_cost_weight: 0.1
+smoothness_cost_velocity: 0.0
+smoothness_cost_acceleration: 1.0
+smoothness_cost_jerk: 0.0
+ridge_factor: 0.0
+
+temp: [1000.0, 1000.0, 0.0]
+
+print_planning_info: false
+
+animate_path: true
+animate_endeffector: true
+animate_endeffector_segment:
+  asp_arm: pressure_box
+trajectory_duration: 10.0
+trajectory_discretization: 0.25
+phase_duration: 0.5
+friction_coefficient: 2.0
+lower_body_root: s_slider
+planning_step_size: 8.0
+
+collision_links:
+  s_slider: true
+  e_rail: true
+  carriage: true
+  e_carriage_beam: true
+  under_carriage: true
+  elbow: true
+  forearm: true
+  wrist: true
+  yaw_gear: true
+
+use_cumulative_costs: true
+use_smooth_noises: true
+
+num_rollouts: 10
+num_reused_rollouts: 5
+noise_stddev: 2.0
+noise_decay: [0.999, 0.999, 0.999, 0.999, 0.999]
+
+num_contacts: 4
+contact_variable_initial_values: [0.2, 0.2, 0.2, 0.2]
+contact_variable_goal_values: [0.2, 0.2, 0.2, 0.2]
